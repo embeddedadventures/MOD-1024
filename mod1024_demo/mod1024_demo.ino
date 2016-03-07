@@ -1,6 +1,6 @@
 /*
 
-Copyright (c) 2015, Embedded Adventures
+Copyright (c) 2016, Embedded Adventures
 All rights reserved.
 
 Contact us at source [at] embeddedadventures.com
@@ -44,31 +44,20 @@ int x = 0;
 void setup() {
   Serial.begin(115200);
   Wire.begin();
+  Serial.println("SDFS");
   mod1024.init();
   Serial.println("MOD1024 VEML6040 & VEML6070 UV and RGBW Light Sensor test sketch");
   Serial.println("Embedded Adventures (embeddedadventures.com)");
+  mod1024.VEML6040_forceMode();
+  mod1024.VEML6040_trigger();
+  delay(500);
 }
 
 void loop() {
-  if (x == 31)
-    x = 0;
-  switch_modes();
   measureLight();
   Serial.println();
-  delay(300);
-  x++;
-}
-
-//Will change between auto reading and forced reading. Auto for 4.5 seconds, then forced for the next 4.5 seconds. Triggered measurements every 900ms
-void switch_modes() {
-  if (x < 15) {
-    mod1024.VEML6040_autoMode();
-  }
-  else {
-    mod1024.VEML6040_forceMode();
-  }
-  if ((x % 9) == 0)
-    mod1024.VEML6040_trigger();
+  delay(400);
+  mod1024.VEML6040_trigger();
 }
 
 //Read registers and print values
@@ -82,7 +71,7 @@ void measureLight() {
   Serial.println("MOD1024 Data");
   Serial.print("UV:\t");
   Serial.println(uv);
-  Serial.print("\nRed:\t");
+  Serial.print("Red:\t");
   Serial.print(red);
   Serial.print("\tGreen:\t");
   Serial.print(green);

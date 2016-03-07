@@ -1,6 +1,6 @@
 /*
 
-Copyright (c) 2015, Embedded Adventures
+Copyright (c) 2016, Embedded Adventures
 All rights reserved.
 
 Contact us at source [at] embeddedadventures.com
@@ -37,20 +37,20 @@ THE POSSIBILITY OF SUCH DAMAGE.
 // EML6040/VEML6070 MOD-1024 UV and RGBW light sensor Arduino library
 // Written originally by Embedded Adventures
 
-#ifndef __MOD1024_H
-#define	__MOD1024_H
+#ifndef __MOD1024_h
+#define	__MOD1024_h
 
 #define uns8 	unsigned char
 #define uns16	unsigned int
 
 //UV Sensor VEML6070 definitions
-#define VEML6070_ADDR		0x38
+#define VEML6070_ADDR	0x38
 
 //RGBW Sensor VEML6040 definitions
 #define VEML6040_ADDR	0x10
 #define VEML6040_CONF	0x00
 
-class MOD1024Class {
+class VEMLClass {
 private:
 	/*Holds previous command byte written to VEML6070*/
 	uns8 VEML6070_command;
@@ -111,6 +111,6 @@ public:
 	void VEML6040_trigger();
 };
 
-extern MOD1024Class mod1024;
+extern VEMLClass mod1024;
 
 #endif
