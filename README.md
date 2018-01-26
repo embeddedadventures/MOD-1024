@@ -14,7 +14,4 @@ Questions/comments/concerns regarding the code? Raise it up as a <a href="https:
 
 
 ## To Do ##
-- test compatibility with ESP8266 breakout boards (ESP7 and ESP12)
-- test compatibility with ESP32 breakout board
-- test compatibility with SAMD-21 based boards
 - include functions for interpreting measurement data
