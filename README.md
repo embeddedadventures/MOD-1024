@@ -5,6 +5,8 @@ Arduino library and sample sketch for the <a href="http://www.embeddedadventures
 
 ## Tested with the following boards ##
 - Arduino Uno/compatible
+- ESP-32
+- SAMD21-based Arduino boards
 
 
 ## Contact ##

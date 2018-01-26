@@ -44,7 +44,6 @@ int x = 0;
 void setup() {
   Serial.begin(115200);
   Wire.begin();
-  Serial.println("SDFS");
   mod1024.init();
   Serial.println("MOD1024 VEML6040 & VEML6070 UV and RGBW Light Sensor test sketch");
   Serial.println("Embedded Adventures (embeddedadventures.com)");
